@@ -3,8 +3,8 @@ from dinosuar import Dinosuar
 
 class Battlefield:
     def __init__(self):
-        robot = Robot()
-        dinosuar = Dinosuar()
+        self.robot = Robot()
+        self.dinosuar = Dinosuar()
 
     def run_game(self):
         pass

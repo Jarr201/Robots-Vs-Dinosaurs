@@ -1,8 +1,8 @@
 class Dinosuar:
     def __init__(self, name, attack_power):
-        name = "Godzilla"
-        attack_power = ""
-        health = ""
+        self.name = "Godzilla"
+        self.attack_power = 20
+        self.health = 100
 
     def attack(self, robot):
         pass
