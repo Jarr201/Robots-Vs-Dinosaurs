@@ -8,4 +8,8 @@ class Robot:
 
     def attack(self, dinosuar):
         self.dinosuar = self.dino_target
-        pass
+        self.dino_target -= self.active_weapon
+
+Mecha_Godzilla = Robot("Mecha_Godzilla")
+
+active_weapon = ("Mecha Sword", 19)
