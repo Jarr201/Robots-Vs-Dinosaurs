@@ -4,12 +4,11 @@ class Robot:
     def __init__(self, name):
         self.name = name
         self.health = 100
-        self.active_weapon = Weapon()
+        self.active_weapon = Weapon("Mecha Sword", 19)
 
     def attack(self, dinosaur):
-        self.dinosaur = self.dino_target
-        self.dino_target -= self.active_weapon
+        dinosaur.health -= self.active_weapon.attack_power
 
-Mecha_Godzilla = Robot("Mecha_Godzilla")
+Mecha_Godzilla = Robot("Mecha Godzilla")
 
-active_weapon = ("Mecha Sword", 19)
+# active_weapon = Weapon("Mecha Sword", 19)
