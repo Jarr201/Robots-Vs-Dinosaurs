@@ -6,8 +6,8 @@ class Robot:
         self.health = 100
         self.active_weapon = Weapon()
 
-    def attack(self, dinosuar):
-        self.dinosuar = self.dino_target
+    def attack(self, dinosaur):
+        self.dinosaur = self.dino_target
         self.dino_target -= self.active_weapon
 
 Mecha_Godzilla = Robot("Mecha_Godzilla")
