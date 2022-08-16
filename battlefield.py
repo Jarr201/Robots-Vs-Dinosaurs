@@ -3,8 +3,8 @@ from dinosaur import Dinosaur
 
 class Battlefield:
     def __init__(self):
-        self.robot = Robot()
-        self.dinosaur = Dinosaur()
+        self.robot = Robot("Mecha Godzilla")
+        self.dinosaur = Dinosaur("Godzilla", 21)
 
     def run_game(self):
         # Should be able to call my functions in this to mandate the order things run in like I did on the day trip project
@@ -25,20 +25,29 @@ class Battlefield:
         # Should definitely be able to set this up like my day trip generator
         who_attacks = input("Who's making the move folks? ")
         if who_attacks == "Godzilla":
-            self.dinosaur.attack()
-            self.display_winner
+            self.dinosaur.attack(self.robot)
+            print("A heavy hit lands from Godzilla!")
+            if self.robot.health <=0:
+                print("This battle is OOOOVEEERRRRR")
+                self.display_winner()
+                exit(0)
+            self.battle_phase()
         elif who_attacks == "Mecha Godzilla":
-            self.robot.attack()
-            self.display_winner
+            self.robot.attack(self.dinosaur)
+            print("A BRUTAL sword swing lands from Mecha Godzilla!")
+            if self.dinosaur.health <=0:
+                print("This battle is OOOOVEEERRRRR")
+                self.display_winner()
+                exit(0)
+            self.battle_phase()
         else:
-            print("Please give a combatant's name.")
+            print("Please enter a current combatant's name.")
             self.battle_phase()
 
     def display_winner(self):
         if self.robot.health <= 0:
-            print(f"Godzilla is your winner!")
+            print("Godzilla is your winner!")
         elif self.dinosaur.health <= 0:
-            print(f"Mecha_Godzilla is your winner!")
+            print("Mecha_Godzilla is your winner!")
         # Might not need an else statement here like I thought I would
-        pass
 
